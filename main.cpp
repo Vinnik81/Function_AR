@@ -1,16 +1,16 @@
-#include <iostream>
+п»ї#include <iostream>
 using namespace std;
 
 void FillRand(int arr[], const unsigned int N);
 void Print(int arr[], const unsigned int N);
-void ReversePrint(int arr[], const unsigned int N); //Выводит массив в обратном направлении;
-int Sum(int arr[], const unsigned int N, int sum = 0); //Возвращает сумму элементов массива;
-double Avg(const unsigned int N, double avg, double s); //Возвращает среднее арифметическое элементов массива;
-int minValueIn(int arr[], const unsigned int N, int min); //Возвращает минимальное значение из массива;
-int maxValueIn(int arr[], const unsigned int N, int max); //Возвращает максимальное значение из массива;
-void Sort(int arr[], const unsigned int N); //Сортирует массив в порядке возрастания;
-void shiftLeft(int arr[], const unsigned N, int k, int shift_L); //Выполняет циклический сдвиг массива влево, на заданное число элементов; 
-void shiftRight(int arr[], const unsigned int N, int k, int shift_R); //Выполняет циклический сдвиг массива вправо, на заданное число элементов;
+void ReversePrint(int arr[], const unsigned int N); //Р’С‹РІРѕРґРёС‚ РјР°СЃСЃРёРІ РІ РѕР±СЂР°С‚РЅРѕРј РЅР°РїСЂР°РІР»РµРЅРёРё;
+int Sum(int arr[], const unsigned int N, int sum = 0); //Р’РѕР·РІСЂР°С‰Р°РµС‚ СЃСѓРјРјСѓ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°;
+double Avg(const unsigned int N, double avg, double s); //Р’РѕР·РІСЂР°С‰Р°РµС‚ СЃСЂРµРґРЅРµРµ Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°;
+int minValueIn(int arr[], const unsigned int N, int min); //Р’РѕР·РІСЂР°С‰Р°РµС‚ РјРёРЅРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РёР· РјР°СЃСЃРёРІР°;
+int maxValueIn(int arr[], const unsigned int N, int max); //Р’РѕР·РІСЂР°С‰Р°РµС‚ РјР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РёР· РјР°СЃСЃРёРІР°;
+void Sort(int arr[], const unsigned int N); //РЎРѕСЂС‚РёСЂСѓРµС‚ РјР°СЃСЃРёРІ РІ РїРѕСЂСЏРґРєРµ РІРѕР·СЂР°СЃС‚Р°РЅРёСЏ;
+void shiftLeft(int arr[], const unsigned N, int k, int shift_L); //Р’С‹РїРѕР»РЅСЏРµС‚ С†РёРєР»РёС‡РµСЃРєРёР№ СЃРґРІРёРі РјР°СЃСЃРёРІР° РІР»РµРІРѕ, РЅР° Р·Р°РґР°РЅРЅРѕРµ С‡РёСЃР»Рѕ СЌР»РµРјРµРЅС‚РѕРІ; 
+void shiftRight(int arr[], const unsigned int N, int k, int shift_R); //Р’С‹РїРѕР»РЅСЏРµС‚ С†РёРєР»РёС‡РµСЃРєРёР№ СЃРґРІРёРі РјР°СЃСЃРёРІР° РІРїСЂР°РІРѕ, РЅР° Р·Р°РґР°РЅРЅРѕРµ С‡РёСЃР»Рѕ СЌР»РµРјРµРЅС‚РѕРІ;
 
 void main()
 {
@@ -32,9 +32,9 @@ void main()
 	minValueIn(arr, N, min);
 	maxValueIn(arr, N, max);
 	Sort(arr, N); 
-	cout << "Введите число сдвига элементов: "; 
+	cout << "Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ СЃРґРІРёРіР° СЌР»РµРјРµРЅС‚РѕРІ: "; 
 	shiftLeft(arr, N, k, shift_L);
-	cout << "Введите число сдвига элементов: ";
+	cout << "Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ СЃРґРІРёРіР° СЌР»РµРјРµРЅС‚РѕРІ: ";
 	shiftRight(arr, N, k, shift_R);
 
 }
@@ -47,7 +47,7 @@ void FillRand(int arr[], const unsigned int N)
 }
 void Print(int arr[], const unsigned int N)
 {
-	cout << "Прямой массив:" << endl;
+	cout << "РџСЂСЏРјРѕР№ РјР°СЃСЃРёРІ:" << endl;
 	for (int i = 0; i < N; i++)
 	{
 		cout << arr[i] << "\t";
@@ -56,7 +56,7 @@ void Print(int arr[], const unsigned int N)
 }
 void ReversePrint(int arr[], const unsigned int N)
 {
-	cout << "Обратный массив:" << endl;
+	cout << "РћР±СЂР°С‚РЅС‹Р№ РјР°СЃСЃРёРІ:" << endl;
 	for (int i = N -1; i >= 0; i--)
 	{
 		cout << arr[i] << "\t";
@@ -71,13 +71,13 @@ int Sum(int arr[], const unsigned int N, int sum)
 		sum += arr[i];
 	}
 
-	cout << "Сумма элементов массива:\n" << sum << endl;
+	cout << "РЎСѓРјРјР° СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°:\n" << sum << endl;
 	return sum;
 }
 double Avg(const unsigned int N, double avg, double s)
 {
 	avg = s / N;
-	 cout << "Среднее арифметическое:\n" << avg << endl;
+	 cout << "РЎСЂРµРґРЅРµРµ Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ:\n" << avg << endl;
 	 return avg;
 }
 
@@ -88,7 +88,7 @@ int minValueIn(int arr[], const unsigned int N, int min)
 	{
 		if (min > arr[i]) min = arr[i];
 	}
-	cout << "Минимальное значение массива:\n" << min << endl;
+	cout << "РњРёРЅРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РјР°СЃСЃРёРІР°:\n" << min << endl;
 	return min;
 }
 
@@ -99,7 +99,7 @@ int maxValueIn(int arr[], const unsigned int N, int max)
 	{
 		if (max < arr[i]) max = arr[i];
 	}
-	cout << "Максимальное значение массива:\n" << max << endl;
+	cout << "РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ РјР°СЃСЃРёРІР°:\n" << max << endl;
 	return max;
 }
 
@@ -117,7 +117,7 @@ void Sort(int arr[], const unsigned int N)
 			}
 		}
 	}
-	cout << "Массив в порядке возрастания:" << endl;
+	cout << "РњР°СЃСЃРёРІ РІ РїРѕСЂСЏРґРєРµ РІРѕР·СЂР°СЃС‚Р°РЅРёСЏ:" << endl;
 	for (int t = 0; t < N; t++)
 	{
 		cout << arr[t] << "\t";
@@ -136,7 +136,7 @@ void shiftLeft(int arr[], const unsigned N, int k, int shift_L)
 		}
 		arr[N - 1] = shift_L;
     }
-	cout << "Результат сдвига массива влево:" << endl;
+	cout << "Р РµР·СѓР»СЊС‚Р°С‚ СЃРґРІРёРіР° РјР°СЃСЃРёРІР° РІР»РµРІРѕ:" << endl;
 	for (int a = 0; a < N; a++)
 	{
      cout << arr[a] << "\t";
@@ -155,7 +155,7 @@ void shiftRight(int arr[], const unsigned int N, int k, int shift_R)
 		}
 		arr[0] = shift_R;
 	}
-	cout << "Результат сдвига массива в право:" << endl;
+	cout << "Р РµР·СѓР»СЊС‚Р°С‚ СЃРґРІРёРіР° РјР°СЃСЃРёРІР° РІ РїСЂР°РІРѕ:" << endl;
 	for (int b = 0; b < N; b++)
 	{
 		cout << arr[b] << "\t";
