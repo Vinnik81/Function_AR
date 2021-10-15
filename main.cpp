@@ -155,7 +155,7 @@ void shiftRight(int arr[], const unsigned int N, int k, int shift_R)
 		}
 		arr[0] = shift_R;
 	}
-	cout << "Результат сдвига массива в право:" << endl;
+	cout << "Результат сдвига массива вправо:" << endl;
 	for (int b = 0; b < N; b++)
 	{
 		cout << arr[b] << "\t";
