@@ -1,8 +1,14 @@
 ﻿#include <iostream>
 using namespace std;
 
-void FillRand(int arr[], const unsigned int N);
+const unsigned int ROWS = 4;
+const unsigned int COLS = 5;
+
+void FillRand(int arr[], const unsigned int N, int minRand = 0, int maxRand = 100);
+void FillRand(double arr[], const unsigned int N, int minRand = 0, int maxRand = 100);
 void Print(int arr[], const unsigned int N);
+void Print(double arr[], const unsigned int N);
+void Print(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);
 void ReversePrint(int arr[], const unsigned int N); //Выводит массив в обратном направлении;
 int Sum(int arr[], const unsigned int N, int sum = 0); //Возвращает сумму элементов массива;
 double Avg(const unsigned int N, double avg, double s); //Возвращает среднее арифметическое элементов массива;
@@ -16,7 +22,16 @@ void main()
 {
 	setlocale(LC_ALL, "Russian");
 	const unsigned int N = 5;
+	
 	int arr[N];
+	int i_arr_2[ROWS][COLS] = 
+	{
+		{1,2,3},
+	    {4,5,6},
+		{7,8,9}
+	};
+	double brr[N];
+	int minRand = 0, maxRand = 100;
 	int sum = 0;
 	double avg = 0;
 	int min = 0;
@@ -24,8 +39,14 @@ void main()
 	int k = 0;
 	int shift_L = 0;
 	int shift_R = 0;
-	FillRand(arr, N);
+	//cout << "Ввидите мин: "; cin >> minRand;
+	//cout << "Ввидите max: "; cin >> maxRand;
+	FillRand(arr, N, minRand, maxRand);
 	Print(arr, N);
+	FillRand(brr, N, minRand, maxRand);
+	Print(brr, N);
+	//FillRand(i_arr_2, ROWS, COLS);
+	Print(i_arr_2, ROWS, COLS);
 	ReversePrint(arr, N);
 	double s = (double)Sum(arr, N, sum);
 	Avg(N, avg, s);
@@ -36,15 +57,25 @@ void main()
 	shiftLeft(arr, N, k, shift_L);
 	cout << "Введите число сдвига элементов: ";
 	shiftRight(arr, N, k, shift_R);
-
 }
-void FillRand(int arr[], const unsigned int N)
+void FillRand(int arr[], const unsigned int N, int minRand, int maxRand)
 {
 	for (int i = 0; i < N; i++)
 	{
-		arr[i] = rand();
+		arr[i] = rand() % (maxRand - minRand) + minRand;
 	}
 }
+void FillRand(double arr[], const unsigned int N, int minRand, int maxRand)
+{
+	minRand *= 100;
+	maxRand *= 100;			
+	for (int i = 0; i < N; i++)
+	{
+		arr[i] = rand() % (maxRand - minRand) + minRand;
+		arr[i] /= 100;
+	}
+}
+
 void Print(int arr[], const unsigned int N)
 {
 	cout << "Прямой массив:" << endl;
@@ -54,6 +85,28 @@ void Print(int arr[], const unsigned int N)
 	}
 	cout << endl;
 }
+void Print(double arr[], const unsigned int N)
+{
+	cout << "Прямой массив:" << endl;
+	for (int i = 0; i < N; i++)
+	{
+		cout << arr[i] << "\t";
+	}
+	cout << endl;
+}
+
+void Print(int arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			cout << arr[i][j] << "\t";
+		}
+		cout << endl;
+	}
+}
+
 void ReversePrint(int arr[], const unsigned int N)
 {
 	cout << "Обратный массив:" << endl;
